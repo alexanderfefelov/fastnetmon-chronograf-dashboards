@@ -1,0 +1,596 @@
+{
+	"meta": {
+		"chronografVersion": "1.7.12",
+		"sources": {
+			"0": {
+				"name": "http://influxdb:8086",
+				"link": "/chronograf/v1/sources/0"
+			}
+		}
+	},
+	"dashboard": {
+		"id": 5,
+		"cells": [
+			{
+				"i": "72182787-57b8-457a-af59-68bbd90ace39",
+				"x": 4,
+				"y": 0,
+				"w": 4,
+				"h": 3,
+				"name": "Incoming traffic",
+				"queries": [
+					{
+						"query": "SELECT top(\"value\", \"cidr\", 5) AS \"bps in\" FROM \"graphite\".\"autogen\".\"hosts\" WHERE time > :dashboardTime: AND \"direction\"='incoming' AND \"resource\"='bps'",
+						"queryConfig": {
+							"database": "graphite",
+							"measurement": "hosts",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "top",
+									"type": "func",
+									"alias": "bps in",
+									"args": [
+										{
+											"value": "value",
+											"type": "field",
+											"alias": ""
+										},
+										{
+											"value": "cidr",
+											"type": "field",
+											"alias": ""
+										},
+										{
+											"value": "5",
+											"type": "integer",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"direction": [
+									"incoming"
+								],
+								"resource": [
+									"bps"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#292933",
+						"name": "castle",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "hosts.bps in",
+						"displayName": "bps",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "Time",
+						"visible": true
+					},
+					{
+						"internalName": "hosts.cidr",
+						"displayName": "IP address",
+						"visible": true
+					},
+					{
+						"internalName": "hosts.bps in",
+						"displayName": "bps",
+						"visible": true
+					}
+				],
+				"timeFormat": "YYYY-MM-DD HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/5/cells/72182787-57b8-457a-af59-68bbd90ace39"
+				}
+			},
+			{
+				"i": "3c3bf7c4-2bbf-485a-84cb-7e32edef58c9",
+				"x": 0,
+				"y": 3,
+				"w": 4,
+				"h": 3,
+				"name": "Outgoing packets",
+				"queries": [
+					{
+						"query": "SELECT top(\"value\", \"cidr\", 5) AS \"pps out\" FROM \"graphite\".\"autogen\".\"hosts\" WHERE time > :dashboardTime: AND \"direction\"='outgoing' AND \"resource\"='pps'",
+						"queryConfig": {
+							"database": "graphite",
+							"measurement": "hosts",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "top",
+									"type": "func",
+									"alias": "pps out",
+									"args": [
+										{
+											"value": "value",
+											"type": "field",
+											"alias": ""
+										},
+										{
+											"value": "cidr",
+											"type": "field",
+											"alias": ""
+										},
+										{
+											"value": "5",
+											"type": "integer",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"direction": [
+									"outgoing"
+								],
+								"resource": [
+									"pps"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#292933",
+						"name": "castle",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "hosts.pps out",
+						"displayName": "pps",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "Time",
+						"visible": true
+					},
+					{
+						"internalName": "hosts.cidr",
+						"displayName": "IP address",
+						"visible": true
+					},
+					{
+						"internalName": "hosts.pps out",
+						"displayName": "pps",
+						"visible": true
+					}
+				],
+				"timeFormat": "YYYY-MM-DD HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/5/cells/3c3bf7c4-2bbf-485a-84cb-7e32edef58c9"
+				}
+			},
+			{
+				"i": "b4e60449-bd06-4e22-8668-8998a86052fe",
+				"x": 0,
+				"y": 0,
+				"w": 4,
+				"h": 3,
+				"name": "Incoming packets",
+				"queries": [
+					{
+						"query": "SELECT top(\"value\", \"cidr\", 5) AS \"pps in\" FROM \"graphite\".\"autogen\".\"hosts\" WHERE time > :dashboardTime: AND \"direction\"='incoming' AND \"resource\"='pps'",
+						"queryConfig": {
+							"database": "graphite",
+							"measurement": "hosts",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "top",
+									"type": "func",
+									"alias": "pps in",
+									"args": [
+										{
+											"value": "value",
+											"type": "field",
+											"alias": ""
+										},
+										{
+											"value": "cidr",
+											"type": "field",
+											"alias": ""
+										},
+										{
+											"value": "5",
+											"type": "integer",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"direction": [
+									"incoming"
+								],
+								"resource": [
+									"pps"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#292933",
+						"name": "castle",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "hosts.pps in",
+						"displayName": "pps",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "Time",
+						"visible": true
+					},
+					{
+						"internalName": "hosts.cidr",
+						"displayName": "IP address",
+						"visible": true
+					},
+					{
+						"internalName": "hosts.pps in",
+						"displayName": "pps",
+						"visible": true
+					}
+				],
+				"timeFormat": "YYYY-MM-DD HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": false,
+					"digits": 2
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/5/cells/b4e60449-bd06-4e22-8668-8998a86052fe"
+				}
+			},
+			{
+				"i": "b13953cb-0396-45c3-8372-e4b1d9b284be",
+				"x": 4,
+				"y": 3,
+				"w": 4,
+				"h": 3,
+				"name": "Outgoing traffic",
+				"queries": [
+					{
+						"query": "SELECT top(\"value\", \"cidr\", 5) AS \"bps out\" FROM \"graphite\".\"autogen\".\"hosts\" WHERE time > :dashboardTime: AND \"direction\"='outgoing' AND \"resource\"='bps'",
+						"queryConfig": {
+							"database": "graphite",
+							"measurement": "hosts",
+							"retentionPolicy": "autogen",
+							"fields": [
+								{
+									"value": "top",
+									"type": "func",
+									"alias": "bps out",
+									"args": [
+										{
+											"value": "value",
+											"type": "field",
+											"alias": ""
+										},
+										{
+											"value": "cidr",
+											"type": "field",
+											"alias": ""
+										},
+										{
+											"value": "5",
+											"type": "integer",
+											"alias": ""
+										}
+									]
+								}
+							],
+							"tags": {
+								"direction": [
+									"outgoing"
+								],
+								"resource": [
+									"bps"
+								]
+							},
+							"groupBy": {
+								"time": "",
+								"tags": []
+							},
+							"areTagsAccepted": true,
+							"rawText": null,
+							"range": null,
+							"shifts": null
+						},
+						"source": "",
+						"type": "influxql"
+					}
+				],
+				"axes": {
+					"x": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					},
+					"y2": {
+						"bounds": [
+							"",
+							""
+						],
+						"label": "",
+						"prefix": "",
+						"suffix": "",
+						"base": "10",
+						"scale": "linear"
+					}
+				},
+				"type": "table",
+				"colors": [
+					{
+						"id": "base",
+						"type": "background",
+						"hex": "#292933",
+						"name": "castle",
+						"value": "-1000000000000000000"
+					}
+				],
+				"legend": {},
+				"tableOptions": {
+					"verticalTimeAxis": true,
+					"sortBy": {
+						"internalName": "hosts.bps out",
+						"displayName": "bps",
+						"visible": true
+					},
+					"wrapping": "truncate",
+					"fixFirstColumn": true
+				},
+				"fieldOptions": [
+					{
+						"internalName": "time",
+						"displayName": "Time",
+						"visible": true
+					},
+					{
+						"internalName": "hosts.cidr",
+						"displayName": "IP address",
+						"visible": true
+					},
+					{
+						"internalName": "hosts.bps out",
+						"displayName": "bps",
+						"visible": true
+					}
+				],
+				"timeFormat": "YYYY-MM-DD HH:mm:ss",
+				"decimalPlaces": {
+					"isEnforced": true,
+					"digits": 0
+				},
+				"note": "",
+				"noteVisibility": "default",
+				"links": {
+					"self": "/chronograf/v1/dashboards/5/cells/b13953cb-0396-45c3-8372-e4b1d9b284be"
+				}
+			}
+		],
+		"templates": [],
+		"name": "FastNetMon Leaders",
+		"organization": "default",
+		"links": {
+			"self": "/chronograf/v1/dashboards/5",
+			"cells": "/chronograf/v1/dashboards/5/cells",
+			"templates": "/chronograf/v1/dashboards/5/templates"
+		}
+	}
+}
